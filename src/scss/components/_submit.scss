@@ -1,0 +1,76 @@
+.cta-row{display:flex;justify-content:center;}
+/* min-height = wysokość zwiniętego tekstu — dzięki temu karta (i tło za nią)
+   ma zawsze tę samą wysokość, niezależnie od stanu rozwinięcia. */
+.data-disclaimer{margin-top:16px;position:relative;min-height:52px;}
+.dd-collapsed,.dd-expanded{
+  font-size:11.5px;
+  line-height:1.5;
+  color:var(--muted);
+  text-align:center;
+}
+/* Rozwinięty tekst pozycjonowany jako "wysuwka" pod kartą — nie zmienia
+   wysokości karty ani sekcji hero, więc tło w tle się nie przesuwa. */
+.dd-expanded{
+  position:absolute;
+  left:-32px;
+  right:-32px;
+  top:0;
+  padding:0 32px 20px;
+  background:var(--paper);
+  border-radius:0 0 14px 14px;
+  box-shadow:0 20px 48px rgba(0,0,0,.22), 0 2px 6px rgba(0,0,0,.08);
+  z-index:3;
+}
+.dd-link,.dd-link-inline{
+  background:none;border:none;padding:0;margin:0;
+  font:inherit;
+  color:var(--red);
+  cursor:pointer;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.dd-link-inline{white-space:normal;text-decoration:underline;}
+.dd-link:hover,.dd-link-inline:hover{text-decoration:underline;}
+.cta{
+  width:auto;
+  background:var(--axepta-green);
+  color:#fff;
+  border:none;
+  border-radius:var(--r-pill);
+  padding:15px 34px;
+  font-family:var(--font-body);
+  font-size:15.5px;
+  font-weight:600;
+  letter-spacing:-.01em;
+  cursor:pointer;
+  transition:background .15s, transform .1s, box-shadow .15s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+.cta:hover:not(:disabled){background:var(--axepta-green-dark);transform:translateY(-2px);box-shadow:0 10px 26px -8px rgba(0,145,90,.5);}
+.cta:active:not(:disabled){transform:scale(.97);box-shadow:none;}
+.cta:focus-visible{outline:3px solid var(--ultramarine);outline-offset:3px;background:var(--axepta-green-dark);}
+.cta:disabled{
+  background:var(--stone-dark);
+  color:var(--ink-400);
+  cursor:not-allowed;
+}
+.cta.loading{background:var(--axepta-green-dark);}
+.cta.success{background:var(--axepta-green-dark);}
+.spinner{
+  width:16px;height:16px;
+  border:2px solid rgba(255,255,255,.4);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:spin .7s linear infinite;
+  display:none;
+}
+.cta.loading .spinner{display:inline-block;}
+.cta.loading .cta-text, .cta.success .cta-default{display:none;}
+.cta .cta-success-text{display:none;}
+.cta.success .cta-success-text{display:inline-flex;align-items:center;gap:8px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes pop{0%{transform:scale(.8);opacity:0;}60%{transform:scale(1.08);opacity:1;}100%{transform:scale(1);}}
+.cta.success .cta-success-text{animation:pop .3s ease;}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Axepta — Szybka płatność | Szlachetna Paczka</title>
+<link rel="stylesheet" href="./src/scss/main.scss">
+</head>
+<body>
+<div class="app">
+
+  <!-- TOP BAR — układ 1:1 jak CashBill, logo CashBill zastąpione Axepta -->
+  <header class="topbar">
+    <div class="topbar-container axp-container">
+    <img class="axp-badge" src="./src/images/logo-szlachetna-paczka.png" alt="Szlachetna Paczka — Zmieniamy świat na dobre">
+    <div class="topbar-inner">
+      <div class="tagline">Razem możemy zrobić<span class="hashtag">#WięcejDobra</span></div>
+      <div class="tb-divider"></div>
+      <div class="brand-cluster">
+        <div class="partner-block">
+          <span class="label">PARTNER STRATEGICZNY<br>SZLACHETNEJ PACZKI</span>
+          <img src="./src/images/logo-bnp-paribas.png" alt="BNP Paribas">
+        </div>
+        <div class="tb-divider"></div>
+        <div class="axepta-block">
+          <span class="label">BEZPIECZNE PŁATNOŚCI<br>REALIZUJE</span>
+          <img src="./src/images/logo-exepta-bnp-paribas.svg" alt="Axepta BNP Paribas — operator płatności">
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  <!-- Nagłówek mobilny: logo Paczki (wersja alternatywna), hashtag i partnerzy — widoczne tylko na mobile -->
+  <div class="mobile-top">
+    <div class="mobile-top-row main">
+      <div class="tagline">Razem możemy zrobić<span class="hashtag">#WięcejDobra</span></div>
+      <img class="mobile-paczka-logo" src="./src/images/logo-szlachetna-paczka-mobile.png" alt="Szlachetna Paczka">
+    </div>
+    <div class="mobile-top-row partners-row">
+      <div class="partner-pair">
+        <span class="label">PARTNER<br>STRATEGICZNY<br>SZLACHETNEJ PACZKI</span>
+        <img class="bnp-logo" src="./src/images/logo-bnp-paribas.png" alt="BNP Paribas">
+      </div>
+      <div class="partner-pair">
+        <span class="label">BEZPIECZNE<br>PŁATNOŚCI<br>REALIZUJE</span>
+        <img class="axepta-logo" src="./src/images/logo-exepta-bnp-paribas.svg" alt="Axepta BNP Paribas — operator płatności">
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO + KARTA PŁATNOŚCI -->
+  <section class="hero">
+    <div class="bg"></div>
+
+    <div class="hero-inner axp-container">
+    <div class="hero-copy">
+      <div class="eyebrow">Wpłata na Szlachetną Paczkę</div>
+      <h1>Twoja wpłata wspiera dotarcie z pomocą <br class="desktop-br">do najbardziej potrzebujących <br class="desktop-br">Rodzin w Polsce</h1>
+      <p>Wybierz kwotę i dokończ płatność prosto i&nbsp;bezpiecznie, przez Axepta BNP Paribas lub Blikiem.</p>
+    </div>
+
+    <div class="axp-card-wrap">
+      <form class="axp-card" id="paymentForm" novalidate>
+        <h2>Wybierz kwotę wsparcia</h2>
+        <div class="amount-grid row no-gutters" id="amountGrid" role="radiogroup" aria-label="Kwota wsparcia">
+          <div class="col-3"><div class="amount-btn" data-amount="50" role="radio" aria-checked="false" tabindex="0"><span class="val">50</span><span class="unit">zł</span></div></div>
+          <div class="col-3"><div class="amount-btn" data-amount="100" role="radio" aria-checked="false" tabindex="0"><span class="val">100</span><span class="unit">zł</span></div></div>
+          <div class="col-3"><div class="amount-btn" data-amount="200" role="radio" aria-checked="false" tabindex="0"><span class="val">200</span><span class="unit">zł</span></div></div>
+          <div class="col-3"><div class="amount-btn other" data-amount="other" role="radio" aria-checked="false" tabindex="0"><span class="val">inna</span><span class="unit">kwota</span></div></div>
+        </div>
+        <div class="custom-amount-wrap" id="customAmountWrap">
+          <div class="custom-amount-field">
+            <input type="number" min="1" step="1" id="customAmountInput" placeholder="inna kwota" inputmode="numeric">
+            <span class="suffix">zł</span>
+          </div>
+        </div>
+        <div class="field-error-msg" id="amountErrorMsg">Wybierz kwotę wsparcia.</div>
+
+        <h2>Wybierz formę płatności</h2>
+        <div class="pay-grid row no-gutters" id="payGrid" role="radiogroup" aria-label="Forma płatności">
+          <div class="col-6"><div class="pay-btn blik" data-method="blik" role="radio" aria-checked="false" tabindex="0">
+            <img src="./src/images/logo-blik.svg" alt="BLIK">
+            <span class="pay-caption">Wpłata z kodem</span>
+          </div></div>
+          <div class="col-6"><div class="pay-btn axepta" data-method="axepta" role="radio" aria-checked="false" tabindex="0">
+            <img src="./src/images/logo-exepta-bnp-paribas.svg" alt="Axepta BNP Paribas">
+            <span class="pay-caption">Szybki przelew</span>
+          </div></div>
+        </div>
+        <div class="field-error-msg" id="payErrorMsg">Wybierz formę płatności.</div>
+
+        <div class="field-label">Podaj swój adres e-mail</div>
+        <div class="field-hint">(potrzebny do realizacji płatności)</div>
+        <div class="email-wrap" id="emailWrap">
+          <input class="email-input" type="email" id="emailInput" placeholder="E-mail *" autocomplete="email">
+          <span class="email-status ok">✓</span>
+          <span class="email-status bad">!</span>
+          <div class="email-error">Podaj poprawny adres e-mail.</div>
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="consent1">
+          <label for="consent1">
+            * Zapoznałem/am się z zasadami przetwarzania danych osobowych przez Axepta BNP Paribas
+            w związku z realizacją płatności oraz akceptuję
+            <a href="#" onclick="return false;">Regulamin płatności</a> i
+            <a href="#" onclick="return false;">Politykę prywatności</a>.
+          </label>
+        </div>
+        <div class="field-error-msg" id="consentErrorMsg">Zaznacz zgodę, aby kontynuować.</div>
+        <div class="req-note"><b>*</b> Pole obowiązkowe</div>
+
+        <div class="cta-row">
+          <button type="submit" class="cta" id="ctaBtn">
+            <span class="spinner"></span>
+            <span class="cta-text cta-default">Wpłacam →</span>
+            <span class="cta-success-text">Dziękujemy! ✓</span>
+          </button>
+        </div>
+
+        <div class="data-disclaimer">
+          <p class="dd-collapsed" id="ddCollapsed">
+            Administratorem Twoich danych osobowych będzie Stowarzyszenie WIOSNA z siedzibą w Krakowie (30-552) przy ul. Wielickiej 20.
+            <button type="button" class="dd-link" id="ddExpandBtn">Szczegóły &gt;</button>
+          </p>
+          <p class="dd-expanded" id="ddExpanded" hidden>
+            Twoje dane osobowe przetwarzamy w szczególności w celu umożliwienia Ci przekazania darowizny na naszą rzecz, co stanowi zawarcie i wykonania umowy (art. 6 ust. 1 lit. b RODO), oraz w celu rozliczenia darowizny i realizacji związanych z nią obowiązków księgowych i rachunkowych (art. 6 ust. 1 lit. c RODO).
+            <a href="https://www.wiosna.org.pl/polityka-prywatnosci/" target="_blank" rel="noopener" class="dd-link-inline">Dowiedz się więcej, jak przetwarzamy Twoje dane.</a>
+            <button type="button" class="dd-link" id="ddCollapseBtn">Zwiń</button>
+          </p>
+        </div>
+      </form>
+    </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-line org-line">Szlachetna Paczka to program realizowany przez Stowarzyszenie WIOSNA. Więcej: <a href="https://www.szlachetnapaczka.pl">www.szlachetnapaczka.pl</a></div>
+    <div class="footer-line">
+      Masz pytania? Napisz:
+      <a href="mailto:dobroczynca@wiosna.org.pl">dobroczynca@wiosna.org.pl</a>
+    </div>
+  </footer>
+
+</div>
+
+<script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

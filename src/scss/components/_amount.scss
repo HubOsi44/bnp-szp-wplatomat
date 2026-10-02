@@ -1,0 +1,64 @@
+.amount-grid{margin-bottom:26px;}
+/* Siatka Bootstrapa (.row.no-gutters + .col-3) z własnym odstępem 10px —
+   wartość spoza standardowej skali Bootstrapa, stąd reguła zamiast klasy px-*.
+   Specyficzność musi przebić ".no-gutters > [class*='col-']" z Bootstrapa. */
+.amount-grid.no-gutters > [class*="col-"]{padding-left:5px;padding-right:5px;}
+.amount-grid.no-gutters > [class*="col-"]:first-child{padding-left:0;}
+.amount-grid.no-gutters > [class*="col-"]:last-child{padding-right:0;}
+.amount-btn{
+  border:1.5px solid var(--line);
+  border-radius:8px;
+  height:58px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  cursor:pointer;
+  background:#fff;
+  transition:border-color .15s ease, box-shadow .15s ease, transform .08s ease;
+  position:relative;
+}
+.amount-btn:hover{border-color:#BFC8C2;}
+.amount-btn:active{transform:scale(.97);}
+.amount-btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+.amount-btn .val{font-family:var(--font-body);font-size:19px;font-weight:700;color:var(--ink);line-height:1;transition:color .15s;}
+.amount-btn .unit{font-size:11px;color:var(--muted);display:block;margin-top:2px;}
+.amount-btn.selected{
+  border-color:var(--axepta-green);
+  background:var(--axepta-green-light);
+  box-shadow:0 0 0 1.5px var(--axepta-green);
+}
+.amount-btn.selected .val{color:var(--axepta-green-dark);}
+.amount-btn.other .val{font-size:15px;font-weight:600;color:var(--ink);}
+.amount-btn.other .unit{font-weight:500;}
+
+.custom-amount-wrap{
+  display:none;
+  margin:-14px 0 26px;
+  animation:slideDown .18s ease;
+}
+.custom-amount-wrap.show{display:block;}
+@keyframes slideDown{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
+.custom-amount-field{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.custom-amount-field input{
+  width:100%;
+  height:58px;
+  padding:0 40px 0 14px;
+  border:1.5px solid var(--axepta-green);
+  border-radius:8px;
+  font-size:15px;
+  font-weight:700;
+  font-family:inherit;
+  color:var(--ink);
+}
+.custom-amount-field input:focus{outline:2px solid var(--axepta-green);outline-offset:1px;}
+.custom-amount-field .suffix{
+  position:absolute;right:14px;
+  font-size:13px;color:var(--muted);font-weight:600;
+  pointer-events:none;
+}

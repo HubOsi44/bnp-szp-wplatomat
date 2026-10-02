@@ -1,0 +1,17 @@
+// Kolejność importów odpowiada kolejności reguł w oryginalnym <style> —
+// nie zmieniaj jej bez sprawdzenia kaskady.
+@use 'vendor/bootstrap-reboot';
+@use 'vendor/bootstrap-grid';
+@use 'abstracts/tokens';
+@use 'base/base';
+@use 'layout/layout';
+@use 'layout/topbar';
+@use 'layout/hero';
+@use 'components/payment-card';
+@use 'components/amount';
+@use 'components/payment-methods';
+@use 'components/form-fields';
+@use 'components/submit';
+@use 'layout/mobile-top';
+@use 'layout/footer';
+@use 'responsive';

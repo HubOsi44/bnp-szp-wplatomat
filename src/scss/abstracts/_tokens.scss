@@ -1,0 +1,22 @@
+:root{
+  /* Tokeny z systemu projektowego Szlachetnej Paczki */
+  --font-display:'Barlow Condensed','Poppins',system-ui,sans-serif;
+  --font-body:'Poppins','Segoe UI',system-ui,sans-serif;
+  --red:#ED1C24;
+  --ultramarine:#2855B6;
+  --stone-light:#F5F4F1;
+  --stone-dark:#D9D5CE;
+  --ink:#2A1715;
+  --ink-400:#6B4F49;
+  --ink-600:#4A3530;
+  --r-pill:100px;
+  /* Zielony Axepta — zastrzeżony wyłącznie dla logotypu/oznaczenia partnera płatności, nigdy dla UI SP */
+  --axepta-green:#00915A;
+  --axepta-green-dark:#00713F;
+  --axepta-green-light:#E9F5EF;
+  --muted:var(--ink-400);
+  --line:var(--stone-dark);
+  --paper:#FFFFFF;
+  --focus:var(--ultramarine);
+  --err:#C8141B;
+}

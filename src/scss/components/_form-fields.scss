@@ -1,0 +1,78 @@
+.field-label{
+  font-size:14px;font-weight:700;text-align:center;margin-bottom:4px;
+}
+.field-error-msg{
+  display:none;
+  color:var(--red);
+  font-size:12.5px;
+  font-weight:600;
+  text-align:center;
+  margin:-18px 0 18px;
+}
+.field-error-msg.show{display:block;}
+#consentErrorMsg{margin-top:6px;}
+.amount-grid.field-error, .pay-grid.field-error{
+  outline:1.5px solid var(--red);
+  outline-offset:6px;
+  border-radius:10px;
+}
+.consent.field-error{
+  box-shadow:0 0 0 1.5px var(--red);
+  border-radius:8px;
+}
+.consent.field-error input[type=checkbox]{
+  outline:2px solid var(--red);
+  outline-offset:2px;
+  border-radius:3px;
+}
+.field-hint{
+  font-size:12px;color:var(--muted);text-align:center;margin-bottom:12px;font-style:italic;
+}
+.email-wrap{position:relative;margin-bottom:16px;}
+.email-input{
+  width:100%;
+  padding:12px 40px 12px 14px;
+  border:1.5px solid var(--line);
+  border-radius:8px;
+  font-size:14px;
+  font-family:inherit;
+  transition:border-color .15s ease;
+}
+.email-input:focus{outline:2px solid var(--focus);outline-offset:1px;border-color:var(--focus);}
+.email-input.valid{border-color:var(--axepta-green);}
+.email-input.invalid{border-color:var(--err);}
+.email-status{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  font-size:14px;display:none;
+}
+.email-input.valid ~ .email-status.ok{display:block;color:var(--axepta-green);}
+.email-input.invalid ~ .email-status.bad{display:block;color:var(--err);}
+.email-error{
+  font-size:11.5px;color:var(--err);margin:4px 0 0;display:none;
+}
+.email-wrap.show-error .email-error{display:block;}
+
+.consent{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  margin-bottom:8px;
+}
+.consent input[type=checkbox]{
+  margin-top:3px;
+  width:15px;height:15px;
+  flex-shrink:0;
+  accent-color:var(--ink);
+  cursor:pointer;
+}
+.consent label{
+  font-size:11.5px;
+  line-height:1.5;
+  color:var(--muted);
+  cursor:pointer;
+}
+.consent a{color:var(--ink);text-decoration:underline;}
+.req-note{
+  font-size:11px;color:var(--muted);margin:6px 0 20px;
+}
+.req-note b{color:var(--red);}

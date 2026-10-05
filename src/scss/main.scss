@@ -1,7 +1,6 @@
-// Kolejność importów odpowiada kolejności reguł w oryginalnym <style> —
-// nie zmieniaj jej bez sprawdzenia kaskady.
+// Kolejność importów = kolejność kaskady — nie zmieniaj jej bez sprawdzenia.
+// Style mobilne są w plikach komponentów (mixin bp-down z abstracts/_mixins.scss).
 @use 'vendor/bootstrap-reboot';
-@use 'vendor/bootstrap-grid';
 @use 'abstracts/tokens';
 @use 'base/base';
 @use 'layout/layout';
@@ -14,4 +13,3 @@
 @use 'components/submit';
 @use 'layout/mobile-top';
 @use 'layout/footer';
-@use 'responsive';

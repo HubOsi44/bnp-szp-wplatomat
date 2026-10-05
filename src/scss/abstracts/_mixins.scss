@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+// Style dla ekranów o szerokości do $bp włącznie, np. @include bp-down($bp-lg-down) { ... }
+@mixin bp-down($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}

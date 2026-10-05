@@ -1,2 +1,122 @@
-/* Nagłówek mobilny (logo Paczki + partnerzy) — widoczny tylko na mobile */
-.mobile-top{display:none;}
+@use '../abstracts' as *;
+
+/* ================= NAGŁÓWEK MOBILNY ================= */
+// Logo Paczki + partnerzy — widoczny tylko na mobile (na desktopie jest .topbar)
+.mobile-top {
+  display: none;
+
+  @include bp-down($bp-lg-down) {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 18px 20px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@include bp-down($bp-lg-down) {
+  .mobile-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 10px 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    & + & {
+      border-top: 1px solid var(--line);
+    }
+
+    .tagline {
+      flex: 0 0 auto;
+      width: 150px;
+      font-size: clamp(14px, 4.2vw, 18px);
+      text-align: left;
+    }
+
+    // Logo Paczki razem z hasłem wyśrodkowane jako jedna grupa
+    &.main {
+      justify-content: center;
+      gap: 12px;
+
+      .tagline {
+        width: auto;
+        flex: 0 0 auto;
+        text-align: center;
+      }
+    }
+  }
+
+  // Obaj partnerzy (etykieta + logo) w JEDNYM wierszu, obok siebie — niższy nagłówek mobilny.
+  .partners-row {
+    justify-content: space-between;
+  }
+
+  .partner-pair {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .label {
+      flex: 0 0 auto;
+      width: 72px;
+      font-size: 8.5px;
+      letter-spacing: .03em;
+      font-weight: 700;
+      color: var(--muted);
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    // Jak na desktopie: BNP wyższy niż Axepta, żeby sygnety były tej samej optycznej wielkości
+    .bnp-logo {
+      height: 22px;
+      width: auto;
+      display: block;
+    }
+
+    .axepta-logo {
+      height: 20px;
+      width: auto;
+      display: block;
+    }
+  }
+
+  .mobile-paczka-logo {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+}
+
+// Bardzo wąskie telefony — jeszcze węższa etykieta i mniejsze logo,
+// żeby obie pary partnerów zmieściły się w jednym wierszu bez przycinania.
+@include bp-down($bp-xs-down) {
+  .mobile-top-row .tagline {
+    width: 112px;
+  }
+
+  .partner-pair {
+    gap: 4px;
+
+    .label {
+      width: 58px;
+      font-size: 7.8px;
+    }
+
+    .bnp-logo {
+      height: 18px;
+    }
+
+    .axepta-logo {
+      height: 16.5px;
+    }
+  }
+}

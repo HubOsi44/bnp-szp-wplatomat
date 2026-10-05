@@ -1,10 +1,20 @@
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
-body{
-  font-family:var(--font-body);
-  background:#EDEFEC;
-  color:var(--ink);
-  -webkit-font-smoothing:antialiased;
+* {
+  box-sizing: border-box;
 }
 
-button{font-family:inherit;}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: #EDEFEC;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}

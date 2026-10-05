@@ -1,38 +1,76 @@
-.pay-grid{margin-bottom:24px;}
-.pay-grid.no-gutters > [class*="col-"]{padding-left:5px;padding-right:5px;}
-.pay-grid.no-gutters > [class*="col-"]:first-child{padding-left:0;}
-.pay-grid.no-gutters > [class*="col-"]:last-child{padding-right:0;}
-.pay-btn{
-  border:1.5px solid var(--line);
-  border-radius:8px;
-  padding:12px 10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  min-height:72px;
-  background:#fff;
-  position:relative;
-  overflow:hidden;
-  transition:border-color .15s ease, box-shadow .15s ease, transform .08s ease;
+@use '../abstracts' as *;
+
+.pay-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
 }
-.pay-btn:hover{border-color:#BFC8C2;}
-.pay-btn:active{transform:scale(.97);}
-.pay-btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
-.pay-btn img{width:auto;height:auto;max-width:100%;display:block;}
-.pay-btn.blik{flex-direction:column;gap:8px;}
-.pay-btn.blik img{max-height:28px;}
-.pay-btn.axepta{flex-direction:column;gap:8px;}
-.pay-btn.axepta img{max-height:28px;}
-.pay-caption{
-  font-family:var(--font-body);
-  font-size:12px;
-  font-weight:600;
-  color:var(--ink);
-  letter-spacing:.01em;
+
+.pay-btn {
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-height: 72px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .08s ease;
+
+  @include bp-down($bp-lg-down) {
+    padding: 10px 8px;
+    min-height: 64px;
+  }
+
+  &:hover {
+    border-color: #BFC8C2;
+  }
+
+  &:active {
+    transform: scale(.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  &.blik,
+  &.axepta {
+    flex-direction: column;
+    gap: 8px;
+
+    img {
+      max-height: 28px;
+
+      @include bp-down($bp-lg-down) {
+        max-height: 24px;
+      }
+    }
+  }
+
+  &.selected {
+    border-color: var(--axepta-green);
+    box-shadow: 0 0 0 1.5px var(--axepta-green);
+    background: var(--axepta-green-light);
+  }
 }
-.pay-btn.selected{
-  border-color:var(--axepta-green);
-  box-shadow:0 0 0 1.5px var(--axepta-green);
-  background:var(--axepta-green-light);
+
+.pay-caption {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: .01em;
 }

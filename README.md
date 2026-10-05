@@ -52,10 +52,23 @@ src/
 ├── js/main.js
 └── scss/
     ├── main.scss          # punkt wejścia — kolejność importów = kolejność kaskady
-    ├── vendor/            # minimalny wycinek Bootstrap 4.3.1 (reboot + 4 klasy siatki)
-    ├── abstracts/         # tokeny (zmienne CSS) i zmienne Sass (breakpointy)
+    ├── vendor/            # minimalny wycinek Bootstrap 4.3.1 Reboot (reset stylów)
+    ├── abstracts/         # tokeny (zmienne CSS), breakpointy i mixin bp-down
     ├── base/
     ├── layout/            # topbar, hero, mobile-top, footer
-    ├── components/        # karta płatności, kwoty, metody płatności, pola, przycisk
-    └── _responsive.scss   # media queries
+    └── components/        # karta płatności, kwoty, metody płatności, pola, przycisk
+```
+
+Style mobilne są przy komponentach, których dotyczą:
+
+```scss
+@use '../abstracts' as *;
+
+.pay-btn {
+  min-height: 72px;
+
+  @include bp-down($bp-lg-down) {
+    min-height: 64px;
+  }
+}
 ```

@@ -27,7 +27,7 @@
         <div class="tb-divider"></div>
         <div class="axepta-block">
           <span class="label">BEZPIECZNE PŁATNOŚCI<br>REALIZUJE</span>
-          <img src="./src/images/logo-exepta-bnp-paribas.svg" alt="Axepta BNP Paribas — operator płatności">
+          <img src="./src/images/logo-axepta-bnp-paribas.svg" alt="Axepta BNP Paribas — operator płatności">
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
       </div>
       <div class="partner-pair">
         <span class="label">BEZPIECZNE<br>PŁATNOŚCI<br>REALIZUJE</span>
-        <img class="axepta-logo" src="./src/images/logo-exepta-bnp-paribas.svg" alt="Axepta BNP Paribas — operator płatności">
+        <img class="axepta-logo" src="./src/images/logo-axepta-bnp-paribas.svg" alt="Axepta BNP Paribas — operator płatności">
       </div>
     </div>
   </div>
@@ -66,11 +66,11 @@
     <div class="axp-card-wrap">
       <form class="axp-card" id="paymentForm" novalidate>
         <h2>Wybierz kwotę wsparcia</h2>
-        <div class="amount-grid row no-gutters" id="amountGrid" role="radiogroup" aria-label="Kwota wsparcia">
-          <div class="col-3"><div class="amount-btn" data-amount="50" role="radio" aria-checked="false" tabindex="0"><span class="val">50</span><span class="unit">zł</span></div></div>
-          <div class="col-3"><div class="amount-btn" data-amount="100" role="radio" aria-checked="false" tabindex="0"><span class="val">100</span><span class="unit">zł</span></div></div>
-          <div class="col-3"><div class="amount-btn" data-amount="200" role="radio" aria-checked="false" tabindex="0"><span class="val">200</span><span class="unit">zł</span></div></div>
-          <div class="col-3"><div class="amount-btn other" data-amount="other" role="radio" aria-checked="false" tabindex="0"><span class="val">inna</span><span class="unit">kwota</span></div></div>
+        <div class="amount-grid" id="amountGrid" role="radiogroup" aria-label="Kwota wsparcia">
+          <div class="amount-btn" data-amount="50" role="radio" aria-checked="false" tabindex="0"><span class="val">50</span><span class="unit">zł</span></div>
+          <div class="amount-btn" data-amount="100" role="radio" aria-checked="false" tabindex="0"><span class="val">100</span><span class="unit">zł</span></div>
+          <div class="amount-btn" data-amount="200" role="radio" aria-checked="false" tabindex="0"><span class="val">200</span><span class="unit">zł</span></div>
+          <div class="amount-btn other" data-amount="other" role="radio" aria-checked="false" tabindex="0"><span class="val">inna</span><span class="unit">kwota</span></div>
         </div>
         <div class="custom-amount-wrap" id="customAmountWrap">
           <div class="custom-amount-field">
@@ -81,15 +81,15 @@
         <div class="field-error-msg" id="amountErrorMsg">Wybierz kwotę wsparcia.</div>
 
         <h2>Wybierz formę płatności</h2>
-        <div class="pay-grid row no-gutters" id="payGrid" role="radiogroup" aria-label="Forma płatności">
-          <div class="col-6"><div class="pay-btn blik" data-method="blik" role="radio" aria-checked="false" tabindex="0">
+        <div class="pay-grid" id="payGrid" role="radiogroup" aria-label="Forma płatności">
+          <div class="pay-btn blik" data-method="blik" role="radio" aria-checked="false" tabindex="0">
             <img src="./src/images/logo-blik.svg" alt="BLIK">
             <span class="pay-caption">Wpłata z kodem</span>
-          </div></div>
-          <div class="col-6"><div class="pay-btn axepta" data-method="axepta" role="radio" aria-checked="false" tabindex="0">
-            <img src="./src/images/logo-exepta-bnp-paribas.svg" alt="Axepta BNP Paribas">
+          </div>
+          <div class="pay-btn axepta" data-method="axepta" role="radio" aria-checked="false" tabindex="0">
+            <img src="./src/images/logo-axepta-bnp-paribas.svg" alt="Axepta BNP Paribas">
             <span class="pay-caption">Szybki przelew</span>
-          </div></div>
+          </div>
         </div>
         <div class="field-error-msg" id="payErrorMsg">Wybierz formę płatności.</div>
 

@@ -29,7 +29,7 @@
   padding: 0 32px 20px;
   background: var(--paper);
   border-radius: 0 0 14px 14px;
-  box-shadow: 0 20px 48px rgba(0,0,0,.22), 0 2px 6px rgba(0,0,0,.08);
+  box-shadow: var(--shadow-card);
   z-index: 3;
 }
 
@@ -58,7 +58,7 @@
 .cta {
   width: auto;
   background: var(--axepta-green);
-  color: #fff;
+  color: var(--on-dark);
   border: none;
   border-radius: var(--r-pill);
   padding: 15px 34px;
@@ -76,7 +76,7 @@
   &:hover:not(:disabled) {
     background: var(--axepta-green-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 26px -8px rgba(0,145,90,.5);
+    box-shadow: 0 10px 26px -8px var(--axepta-green-glow);
   }
 
   &:active:not(:disabled) {
@@ -88,12 +88,6 @@
     outline: 3px solid var(--ultramarine);
     outline-offset: 3px;
     background: var(--axepta-green-dark);
-  }
-
-  &:disabled {
-    background: var(--stone-dark);
-    color: var(--ink-400);
-    cursor: not-allowed;
   }
 
   &.loading,
@@ -126,7 +120,7 @@
   width: 16px;
   height: 16px;
   border: 2px solid rgba(255,255,255,.4);
-  border-top-color: #fff;
+  border-top-color: var(--on-dark);
   border-radius: 50%;
   animation: spin .7s linear infinite;
   display: none;

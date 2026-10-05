@@ -14,9 +14,17 @@
   --axepta-green:#00915A;
   --axepta-green-dark:#00713F;
   --axepta-green-light:#E9F5EF;
+  --axepta-green-glow:rgba(0,145,90,.5);
   --muted:var(--ink-400);
   --line:var(--stone-dark);
+  --line-hover:#BFC8C2;
   --paper:#FFFFFF;
+  /* Kolor płótna strony — widoczny m.in. przy "odbiciu" przewijania na mobile */
+  --page-bg:#EDEFEC;
+  --on-dark:#FFFFFF;
+  --hero-bg:#141914;
+  --hero-eyebrow:#F2B9A1;
+  --shadow-card:0 20px 48px rgba(0,0,0,.22), 0 2px 6px rgba(0,0,0,.08);
   --focus:var(--ultramarine);
   --err:#C8141B;
 }

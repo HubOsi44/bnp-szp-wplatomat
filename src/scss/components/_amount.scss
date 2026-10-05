@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .amount-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -6,31 +8,13 @@
 }
 
 .amount-btn {
-  border: 1.5px solid var(--line);
-  border-radius: 8px;
+  @include choice-tile;
   height: 58px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  cursor: pointer;
-  background: #fff;
-  transition: border-color .15s ease, box-shadow .15s ease, transform .08s ease;
-  position: relative;
-
-  &:hover {
-    border-color: #BFC8C2;
-  }
-
-  &:active {
-    transform: scale(.97);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--focus);
-    outline-offset: 2px;
-  }
 
   .val {
     font-family: var(--font-body);
@@ -48,14 +32,8 @@
     margin-top: 2px;
   }
 
-  &.selected {
-    border-color: var(--axepta-green);
-    background: var(--axepta-green-light);
-    box-shadow: 0 0 0 1.5px var(--axepta-green);
-
-    .val {
-      color: var(--axepta-green-dark);
-    }
+  &.selected .val {
+    color: var(--axepta-green-dark);
   }
 
   &.other {

@@ -6,3 +6,32 @@
     @content;
   }
 }
+
+// Klikalny kafelek wyboru (kwota, forma płatności) — ramka, stany i zaznaczenie.
+@mixin choice-tile {
+  position: relative;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  cursor: pointer;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .08s ease;
+
+  &:hover {
+    border-color: var(--line-hover);
+  }
+
+  &:active {
+    transform: scale(.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  &.selected {
+    border-color: var(--axepta-green);
+    background: var(--axepta-green-light);
+    box-shadow: 0 0 0 1.5px var(--axepta-green);
+  }
+}

@@ -1,0 +1,16 @@
+// Slogan "Razem możemy zrobić #WięcejDobra" — w belce desktopowej i w nagłówku mobilnym
+// (wersja mobilna nadpisuje rozmiar w layout/_mobile-top.scss).
+.tagline {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.22;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -.01em;
+  flex-shrink: 0;
+
+  .hashtag {
+    color: var(--axepta-green);
+    display: block;
+  }
+}

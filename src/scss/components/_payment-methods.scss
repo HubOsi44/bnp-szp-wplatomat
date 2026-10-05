@@ -8,35 +8,17 @@
 }
 
 .pay-btn {
-  border: 1.5px solid var(--line);
-  border-radius: 8px;
+  @include choice-tile;
   padding: 12px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   min-height: 72px;
-  background: #fff;
-  position: relative;
   overflow: hidden;
-  transition: border-color .15s ease, box-shadow .15s ease, transform .08s ease;
 
   @include bp-down($bp-lg-down) {
     padding: 10px 8px;
     min-height: 64px;
-  }
-
-  &:hover {
-    border-color: #BFC8C2;
-  }
-
-  &:active {
-    transform: scale(.97);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--focus);
-    outline-offset: 2px;
   }
 
   img {
@@ -58,12 +40,6 @@
         max-height: 24px;
       }
     }
-  }
-
-  &.selected {
-    border-color: var(--axepta-green);
-    box-shadow: 0 0 0 1.5px var(--axepta-green);
-    background: var(--axepta-green-light);
   }
 }
 

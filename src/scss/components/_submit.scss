@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .cta-row {
   display: flex;
   justify-content: center;
@@ -45,7 +47,7 @@
   text-decoration: none;
   white-space: nowrap;
 
-  &:hover {
+  @include on-hover {
     text-decoration: underline;
   }
 }
@@ -73,7 +75,7 @@
   justify-content: center;
   gap: 10px;
 
-  &:hover:not(:disabled) {
+  @include on-hover(':not(:disabled)') {
     background: var(--axepta-green-dark);
     transform: translateY(-2px);
     box-shadow: 0 10px 26px -8px var(--axepta-green-glow);

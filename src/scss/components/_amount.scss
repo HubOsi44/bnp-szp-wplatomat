@@ -80,6 +80,11 @@
     font-family: inherit;
     color: var(--ink);
 
+    // iOS Safari przybliża stronę przy fokusie na polu z czcionką < 16px
+    @include bp-down($bp-lg-down) {
+      font-size: 16px;
+    }
+
     &:focus {
       outline: 2px solid var(--axepta-green);
       outline-offset: 1px;

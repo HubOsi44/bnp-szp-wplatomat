@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .field-label {
   font-size: 14px;
   font-weight: 700;
@@ -61,6 +63,14 @@
   font-size: 14px;
   font-family: inherit;
   transition: border-color .15s ease;
+
+  // iOS Safari przybliża stronę przy fokusie na polu z czcionką < 16px.
+  // Mniejszy padding zachowuje tę samą wysokość pola (48px).
+  @include bp-down($bp-lg-down) {
+    font-size: 16px;
+    padding-top: 10.5px;
+    padding-bottom: 10.5px;
+  }
 
   &:focus {
     outline: 2px solid var(--focus);

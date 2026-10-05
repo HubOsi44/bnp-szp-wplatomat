@@ -7,6 +7,16 @@
   }
 }
 
+// Hover tylko na urządzeniach z kursorem — na dotyku stan :hover "przykleja się" po stuknięciu.
+// $extra dokleja dodatkowe pseudoklasy, np. @include on-hover(':not(:disabled)').
+@mixin on-hover($extra: '') {
+  @media (hover: hover) {
+    &:hover#{$extra} {
+      @content;
+    }
+  }
+}
+
 // Klikalny kafelek wyboru (kwota, forma płatności) — ramka, stany i zaznaczenie.
 @mixin choice-tile {
   position: relative;
@@ -16,7 +26,7 @@
   cursor: pointer;
   transition: border-color .15s ease, box-shadow .15s ease, transform .08s ease;
 
-  &:hover {
+  @include on-hover {
     border-color: var(--line-hover);
   }
 
